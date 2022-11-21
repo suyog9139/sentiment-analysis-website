@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sentiment Analysis</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  {% load static %}
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static "css/style.css" %}">
+  
+
+	<title>Sentiment Detector</title>
+	
+</head>
+
+<body> 
+
+
+	<header>
+		<div id="brandname">
+			   Machine Learning Website with Django
+		</div>
+		<div id="brandname">
+			This Website uses Amazon Fine Food Reviews Dataset
+		</div>
+		<div id="brandname">
+			Analyze ~500,000 food reviews from Amazon
+		</div>
+
+	</header>
+
+	<div class="container">
+        <h1>Sentiment Analysis</h1>
+		{% csrf_token %}
+		<form action="{% url 'predict' %}" method="POST">
+		<p>Enter Your Text Here</p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea placeholder="Enter your Text here" name="message" rows="6" cols="50"></textarea>
+		<br/>
+
+		<input type="submit" class="btn-info" value="predict">
+		
+		
+	</form>
+	<div class="my_prediction"
+	{% if prediction == 1%}
+	<h1 style="color:#008000;"><strong>Positive</strong></h1>
+	<span style='font-size:100px;'>&#128522;</span>
+
+	{% elif prediction == 0%}
+	<h1 style="color:#FF0000;"><strong>Negative</strong></h1>
+	<span style='font-size:100px;'>&#128545;</span>
+	
+	{% elif prediction == 2%}
+	<h2 style="color:white;"><strong>Neutral</strong></h2>
+	<span style='font-size:100px;'>&#128528;</span>
+	
+	{% elif prediction == 3%}
+        <h2 style="color:red;"><strong>Enter text atleast greater than 3 and Try Again..!!!</strong></h2>
+	
+	{% endif %}
+	</div>
+</div>
+</body>
+</html>
