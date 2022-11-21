@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from sentiment.views import home
+app_name = "sentiment" 
+from sentiment.views import predict
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home),
+    path('predict/', predict, name='predict'),
 ]
