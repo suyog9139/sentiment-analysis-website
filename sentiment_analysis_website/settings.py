@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6zuv==-phfxl-d@$s*!4eb+_^sljzrjmg+yz1()lzn8h+@ew0s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['sentiment-analysis-website2110.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['sentiment-analysis-website2110.herokuapp.com', '127.0.0.1','*']
 
 
 # Application definition
@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'sentiment_analysis_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
