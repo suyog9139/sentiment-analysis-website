@@ -12,8 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 clf = pickle.load(open('sentiment/models/nb_clf.pkl', 'rb'))
 cv=pickle.load(open('sentiment/models/tfidf_model.pkl','rb'))
 
-# clf = os.path.join(settings.MODELS, pickle.load(open('nb_clf.pkl', 'rb')))
-# cv = os.path.join(settings.MODELS, pickle.load(open('tfidf_model.pkl','rb')))
+
 
 
 def home(request):
